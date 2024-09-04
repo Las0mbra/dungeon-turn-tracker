@@ -1,0 +1,10 @@
+<!-- templates/tracker.hbs -->
+<div class="tracker-container">
+    {{#each rows}}
+        <div class="tracker-row">
+            {{#each this}}
+                <div class="tracker-box" data-box-id="{{this.id}}"></div>
+            {{/each}}
+        </div>
+    {{/each}}
+</div>

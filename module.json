@@ -1,0 +1,20 @@
+{
+    "id": "dungeon-turn-tracker",
+    "title": "Dungeon Turn Tracker - Track Dungeon Turns Quick and Easy",
+    "description": "A simple tracker module to track dungeon turns in the Foundry Virtual Tabletop framework.",
+    "authors": [
+      {
+      "name": "Las0mbra"
+      }
+    ],
+    "version": "1.0.0",
+    "compatibility": {
+      "minimum": "11",
+      "verified": "11"
+    },
+    "esmodules": [
+        "scripts/tracker.js"
+      ],
+      "styles": ["styles/tracker.css"],
+      "templates": ["templates/tracker.hbs"]
+  }  

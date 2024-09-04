@@ -1,0 +1,22 @@
+/* styles/tracker.css */
+.tracker-container {
+    padding: 10px;
+}
+
+.tracker-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.tracker-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tracker-box.checked {
+    background-color: #000;
+}
