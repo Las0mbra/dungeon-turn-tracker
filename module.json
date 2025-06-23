@@ -1,0 +1,25 @@
+{
+  "id": "dungeon-turn-tracker",
+  "title": "Dungeon Turn Tracker",
+  "description": "A sophisticated turn tracking module with advanced interval highlighting, multi-user sync, and spectacular visual effects for FoundryVTT",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "YourGitHubUsername",
+      "email": "your.email@example.com"
+    }
+  ],
+  "scripts": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/main.css"
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "socket": true,
+  "manifest": "https://github.com/YourGitHubUsername/dungeon-turn-tracker/releases/latest/download/module.json",
+  "download": "https://github.com/YourGitHubUsername/dungeon-turn-tracker/releases/latest/download/module.zip"
+}

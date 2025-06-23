@@ -1,0 +1,47 @@
+<div class="dungeon-turn-tracker theme-{{theme}}">
+    <h3>Dungeon Turn Tracker</h3>
+    
+    {{#if pagination.showPagination}}
+    <div class="pagination-controls">
+        <button id="prev-page" type="button" {{#unless pagination.hasPrevious}}disabled{{/unless}}>
+            ◀ Previous
+        </button>
+        
+        <div class="page-info">
+            <span>Page</span>
+            <input id="page-input" type="number" 
+                   value="{{pagination.currentPage}}" 
+                   min="1" 
+                   max="{{pagination.totalPages}}"
+                   style="width: 50px; text-align: center;">
+            <span>of {{pagination.totalPages}}</span>
+        </div>
+        
+        <button id="next-page" type="button" {{#unless pagination.hasNext}}disabled{{/unless}}>
+            Next ▶
+        </button>
+    </div>
+    {{/if}}
+    
+    <div class="page-text-section">
+        <input type="text" id="page-text" placeholder="Enter custom text for this page..." value="{{pageText}}">
+    </div>
+    
+    <div class="checkbox-grid">
+        {{#each checkboxes}}
+        <div class="checkbox-column{{#if hasInterval}} interval-{{intervalData.primary}}{{#if intervalData.secondary.length}} multi-interval{{/if}}{{#if intervalData.isTriple}} triple-interval{{/if}}{{/if}}"
+             {{#if hasInterval}}data-intervals="{{intervalData.primary}}{{#each intervalData.secondary}},{{this}}{{/each}}" 
+             data-interval-count="{{intervalData.count}}"{{/if}}>
+            <input type="checkbox" 
+                   id="checkbox-{{id}}" 
+                   data-id="{{id}}" 
+                   {{#if checked}}checked{{/if}}>
+            <label for="checkbox-{{id}}" class="checkbox-number">{{id}}{{#if hasInterval}}{{#if intervalData.isTriple}}<span class="triple-indicator">★</span>{{else if intervalData.secondary.length}}<span class="multi-indicator">●</span>{{/if}}{{/if}}</label>
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="controls">
+        <button id="reset-all" type="button">Reset All</button>
+    </div>
+</div>

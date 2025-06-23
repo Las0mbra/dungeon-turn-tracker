@@ -1,0 +1,99 @@
+<form>
+    <div class="reset-confirmation">
+        <p>{{message}}</p>
+        
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>This action cannot be undone!</span>
+        </div>
+        
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="confirm" required>
+                I understand and want to reset all settings to defaults
+            </label>
+        </div>
+        
+        <footer class="sheet-footer flexrow">
+            <button type="submit" name="submit">
+                <i class="fas fa-undo"></i> Reset to Defaults
+            </button>
+            <button type="button" name="close">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </footer>
+    </div>
+</form>
+
+<style>
+.reset-confirmation {
+    padding: 20px;
+    text-align: center;
+}
+
+.reset-confirmation p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 15px 0;
+    color: #856404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.warning i {
+    color: #f39c12;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.sheet-footer {
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sheet-footer button {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sheet-footer button[name="submit"] {
+    background: #dc3545;
+    color: white;
+}
+
+.sheet-footer button[name="submit"]:hover {
+    background: #c82333;
+}
+
+.sheet-footer button[name="close"] {
+    background: #6c757d;
+    color: white;
+}
+
+.sheet-footer button[name="close"]:hover {
+    background: #5a6268;
+}
+</style>

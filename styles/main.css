@@ -1,0 +1,736 @@
+.dungeon-turn-tracker {
+    padding: 15px;
+}
+
+.dungeon-turn-tracker h3 {
+    margin-top: 0;
+    color: #4b4a44;
+    border-bottom: 1px solid #782e22;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background: #e8f4f8;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+}
+
+.pagination-controls button {
+    padding: 5px 12px;
+    background: #782e22;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+    background: #9d3a2a;
+}
+
+.pagination-controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0c5460;
+}
+
+.page-info input {
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.page-text-section {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.page-text-section input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.page-text-section input:focus {
+    outline: none;
+    border-color: #782e22;
+    box-shadow: 0 0 0 2px rgba(120, 46, 34, 0.2);
+}
+
+.checkbox-grid {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f8f8f8;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.checkbox-column:hover {
+    background: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.checkbox-column input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+    margin-bottom: 8px; 
+    
+}
+.checkbox-column input[type="checkbox"] {
+    background-color: #fff;        /* light background */
+    border: 2px solid #ccc;        /* visible border for clarity */
+    border-radius: 4px;
+    accent-color: #4a90e2;         /* for checked state */
+}
+
+.checkbox-number {
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4b4a44;
+    text-align: center;
+    min-width: 20px;
+}
+
+.checkbox-column input[type="checkbox"]:checked + .checkbox-number {
+    color: #782e22;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.checkbox-column input[type="checkbox"]:checked {
+    accent-color: #782e22;
+}
+
+/* Interval Highlighting Styles */
+.checkbox-column.interval-yellow {
+    background: linear-gradient(135deg, #fff9c4, #fef3c7);
+    border-color: #f59e0b;
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
+.checkbox-column.interval-orange {
+    background: linear-gradient(135deg, #fed7aa, #fdba74);
+    border-color: #ea580c;
+    box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+}
+
+.checkbox-column.interval-blue {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.checkbox-column.interval-green {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-color: #16a34a;
+    box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+}
+
+.checkbox-column.interval-purple {
+    background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
+    border-color: #7c3aed;
+    box-shadow: 0 2px 4px rgba(124, 58, 237, 0.2);
+}
+
+.checkbox-column.interval-red {
+    background: linear-gradient(135deg, #fecaca, #fca5a5);
+    border-color: #dc2626;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+/* Interval hover effects */
+.checkbox-column.interval-yellow:hover {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    transform: translateY(-1px);
+}
+
+.checkbox-column.interval-orange:hover {
+    background: linear-gradient(135deg, #fdba74, #fb923c);
+    transform: translateY(-1px);
+}
+
+.checkbox-column.interval-blue:hover {
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+    transform: translateY(-1px);
+}
+
+.checkbox-column.interval-green:hover {
+    background: linear-gradient(135deg, #bbf7d0, #86efac);
+    transform: translateY(-1px);
+}
+
+.checkbox-column.interval-purple:hover {
+    background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+    transform: translateY(-1px);
+}
+
+.checkbox-column.interval-red:hover {
+    background: linear-gradient(135deg, #fca5a5, #f87171);
+    transform: translateY(-1px);
+}
+
+/* Interval number styling */
+.checkbox-column.interval-yellow .checkbox-number {
+    color: #92400e;
+    font-weight: 900;
+}
+
+.checkbox-column.interval-orange .checkbox-number {
+    color: #9a3412;
+    font-weight: 900;
+}
+
+.checkbox-column.interval-blue .checkbox-number {
+    color: #1e40af;
+    font-weight: 900;
+}
+
+.checkbox-column.interval-green .checkbox-number {
+    color: #15803d;
+    font-weight: 900;
+}
+
+.checkbox-column.interval-purple .checkbox-number {
+    color: #6b21a8;
+    font-weight: 900;
+}
+
+.checkbox-column.interval-red .checkbox-number {
+    color: #b91c1c;
+    font-weight: 900;
+}
+
+/* Multi-interval collision styles */
+.checkbox-column.multi-interval {
+    position: relative;
+}
+
+/* Multi-interval indicator */
+.multi-indicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 6px;
+    line-height: 8px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Multi-interval borders for collision detection */
+.checkbox-column.multi-interval::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Enhanced visual for multi-intervals */
+.checkbox-column.multi-interval {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-width: 2px;
+}
+
+.checkbox-column.multi-interval:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Pulsing effect for multi-intervals */
+.checkbox-column.multi-interval::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    animation: multi-pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes multi-pulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* TRIPLE INTERVAL CONVERGENCE - SPECIAL EFFECTS */
+.checkbox-column.triple-interval {
+    position: relative;
+    background: radial-gradient(circle at center, 
+        rgba(255, 215, 0, 0.3) 0%, 
+        var(--interval-bg-start) 30%, 
+        var(--interval-bg-end) 100%) !important;
+    border: 3px solid gold;
+    box-shadow: 
+        0 0 0 2px rgba(255, 215, 0, 0.4),
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: triple-glow 3s ease-in-out infinite;
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+.checkbox-column.triple-interval:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 
+        0 0 0 3px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.8),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Triple indicator star */
+.triple-indicator {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 12px;
+    height: 12px;
+    color: gold;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.8);
+    animation: star-twinkle 2s ease-in-out infinite;
+    z-index: 110;
+}
+
+/* Triple interval special border animation */
+.checkbox-column.triple-interval::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(45deg, 
+        gold, 
+        rgba(255, 215, 0, 0.5), 
+        gold, 
+        rgba(255, 215, 0, 0.5)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: border-spin 4s linear infinite;
+    z-index: 1;
+}
+
+/* Sparkle effect overlay */
+.checkbox-column.triple-interval::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+        radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    border-radius: 5px;
+    animation: sparkle 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Enhanced number styling for triple intervals */
+.checkbox-column.triple-interval .checkbox-number {
+    color: #b8860b !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+    font-size: 16px !important;
+}
+
+/* Animation keyframes */
+@keyframes triple-glow {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 2px rgba(255, 215, 0, 0.4),
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 3px rgba(255, 215, 0, 0.7),
+            0 0 30px rgba(255, 215, 0, 0.9),
+            0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@keyframes star-twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes border-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.controls button {
+    flex: 1;
+    padding: 8px 15px;
+    background: #782e22;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controls button:hover {
+    background: #9d3a2a;
+}
+
+.status-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e8f4f8;
+    border: 1px solid #bee5eb;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.status-info p {
+    margin: 2px 0;
+    color: #0c5460;
+}
+
+.status-info strong {
+    color: #782e22;
+}
+
+/* Dark Theme Styles */
+.dungeon-turn-tracker.theme-dark {
+    background: #2b2b2b;
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark h3 {
+    color: #e0e0e0;
+    border-bottom-color: #c44e3a;
+}
+
+.dungeon-turn-tracker.theme-dark .pagination-controls {
+    background: #3d3d3d;
+    border-color: #555;
+}
+
+.dungeon-turn-tracker.theme-dark .pagination-controls button {
+    background: #c44e3a;
+}
+
+.dungeon-turn-tracker.theme-dark .pagination-controls button:hover:not(:disabled) {
+    background: #d4573f;
+}
+
+.dungeon-turn-tracker.theme-dark .pagination-controls button:disabled {
+    background: #555;
+}
+
+.dungeon-turn-tracker.theme-dark .page-info {
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark .page-info input {
+    background: #4d4d4d;
+    border-color: #666;
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-grid {
+    background: #3d3d3d;
+    border-color: #555;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column {
+    background: #4d4d4d;
+    border-color: #666;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column:hover {
+    background: #5d5d5d;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-number {
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column input[type="checkbox"]:checked + .checkbox-number {
+    color: #c44e3a;
+}
+
+.dungeon-turn-tracker.theme-dark .controls button {
+    background: #c44e3a;
+}
+
+.dungeon-turn-tracker.theme-dark .controls button:hover {
+    background: #d4573f;
+}
+
+.dungeon-turn-tracker.theme-dark .status-info {
+    background: #3d3d3d;
+    border-color: #555;
+}
+
+.dungeon-turn-tracker.theme-dark .status-info p {
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark .status-info strong {
+    color: #c44e3a;
+}
+
+.dungeon-turn-tracker.theme-dark .page-text-section {
+    background: #3d3d3d;
+    border-color: #555;
+}
+
+.dungeon-turn-tracker.theme-dark .page-text-section input {
+    background: #4d4d4d;
+    border-color: #666;
+    color: #e0e0e0;
+}
+
+.dungeon-turn-tracker.theme-dark .page-text-section input:focus {
+    border-color: #c44e3a;
+    box-shadow: 0 0 0 2px rgba(196, 78, 58, 0.2);
+}
+
+/* Dark Theme Interval Styles */
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-yellow {
+    background: linear-gradient(135deg, #451a03, #78350f);
+    border-color: #f59e0b;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-orange {
+    background: linear-gradient(135deg, #431407, #7c2d12);
+    border-color: #ea580c;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-blue {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    border-color: #3b82f6;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-green {
+    background: linear-gradient(135deg, #14532d, #166534);
+    border-color: #22c55e;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-purple {
+    background: linear-gradient(135deg, #581c87, #6b21a8);
+    border-color: #a855f7;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-red {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    border-color: #ef4444;
+}
+
+/* Dark theme interval hover effects */
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-yellow:hover {
+    background: linear-gradient(135deg, #78350f, #92400e);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-orange:hover {
+    background: linear-gradient(135deg, #7c2d12, #9a3412);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-blue:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-green:hover {
+    background: linear-gradient(135deg, #166534, #15803d);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-purple:hover {
+    background: linear-gradient(135deg, #6b21a8, #7c3aed);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-red:hover {
+    background: linear-gradient(135deg, #991b1b, #b91c1c);
+}
+
+/* Dark theme interval number styling */
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-yellow .checkbox-number {
+    color: #fbbf24;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-orange .checkbox-number {
+    color: #fb923c;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-blue .checkbox-number {
+    color: #60a5fa;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-green .checkbox-number {
+    color: #4ade80;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-purple .checkbox-number {
+    color: #c084fc;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.interval-red .checkbox-number {
+    color: #f87171;
+}
+
+/* Dark theme multi-interval styles */
+.dungeon-turn-tracker.theme-dark .multi-indicator {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.multi-interval::before {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.multi-interval {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.multi-interval:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.multi-interval::after {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark theme triple-interval styles */
+.dungeon-turn-tracker.theme-dark .checkbox-column.triple-interval {
+    background: radial-gradient(circle at center, 
+        rgba(255, 215, 0, 0.4) 0%, 
+        #2d2d2d 30%, 
+        #1a1a1a 100%) !important;
+    border-color: #ffd700;
+    box-shadow: 
+        0 0 0 2px rgba(255, 215, 0, 0.6),
+        0 0 25px rgba(255, 215, 0, 0.8),
+        0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.triple-interval:hover {
+    box-shadow: 
+        0 0 0 3px rgba(255, 215, 0, 0.8),
+        0 0 35px rgba(255, 215, 0, 1),
+        0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.dungeon-turn-tracker.theme-dark .triple-indicator {
+    color: #ffd700;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 1);
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.triple-interval .checkbox-number {
+    color: #ffd700 !important;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+}
+
+/* Enhanced dark theme glow animation */
+@keyframes triple-glow-dark {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 2px rgba(255, 215, 0, 0.6),
+            0 0 25px rgba(255, 215, 0, 0.8),
+            0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 3px rgba(255, 215, 0, 0.9),
+            0 0 35px rgba(255, 215, 0, 1.2),
+            0 6px 20px rgba(0, 0, 0, 0.7);
+    }
+}
+
+.dungeon-turn-tracker.theme-dark .checkbox-column.triple-interval {
+    animation: triple-glow-dark 3s ease-in-out infinite;
+}
