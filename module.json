@@ -5,8 +5,8 @@
   "version": "2.0.0",
   "authors": [
     {
-      "name": "YourGitHubUsername",
-      "email": "your.email@example.com"
+      "name": "Las0mbra",
+      "email": "gtsigouris@gmail.com"
     }
   ],
   "scripts": [
@@ -21,5 +21,5 @@
   },
   "socket": true,
   "manifest": "https://github.com/Las0mbra/dungeon-turn-tracker/releases/latest/download/module.json",
-  "download": "https://github.com/Las0mbra/dungeon-turn-tracker/releases/latest/download/module.zip"
+  "download": "https://github.com/Las0mbra/dungeon-turn-tracker/releases/latest/download/dungeon-turn-tracker.zip"
 }
