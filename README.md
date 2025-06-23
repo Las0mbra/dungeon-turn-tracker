@@ -2,6 +2,8 @@
 
 A simple turn tracking module for FoundryVTT. Perfect for tracking combat rounds, exploration phases, resource management, story beats, and any sequential game events.
 
+Install via -> https://github.com/Las0mbra/dungeon-turn-tracker/releases/latest/download/module.json
+
 ## ✨ Core Features
 
 ### 📋 **Smart Checkbox Management**
